@@ -373,9 +373,15 @@
                 <p style="color: #2F4F4F; font-size: 1.2rem; margin-bottom: 20px;">
                     Help us plan the perfect ocean adventure!
                 </p>
-                <button class="interactive-button" onclick="handleRSVP()" style="background: linear-gradient(45deg, #32CD32, #228B22);">
-                    🏴‍☠️ RSVP for the Crew!
-                </button>
+                <div class="rsvp-container">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeexl17ri-NAWWxc3AGQU0p8l6ivkZk4BHlcKLnpSFUrFrN7A/viewform?embedded=true" 
+                            class="rsvp-form" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0">
+                        Loading RSVP form...
+                    </iframe>
+                </div>
             </div>
         </div>
 
@@ -469,35 +475,6 @@
                         <h4 style="color: #20B2AA; margin-bottom: 10px;">🧩 Locks and Latches</h4>
                         <p style="font-size: 1rem;">Activity boards with locks and latches/p>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="info-section">
-            <h2 style="color: #FF6347; font-size: 2rem; margin-bottom: 20px;">🏴‍☠️ Treasure Chest of Gift Ideas! 💎</h2>
-            <p style="color: #2F4F4F; font-size: 1.2rem; margin-bottom: 25px;">
-                Gifts are optional, but if you need ideas, click the treasure chest to reveal gift **suggestions** for our little captain! Nice to go for sustainable options, even second hand welcome.
-            </p>
-            
-            <div class="treasure-chest" onclick="openTreasureChest()" id="treasureChest">
-                <div class="chest-closed" id="chestClosed">
-                    <div style="font-size: 4rem; cursor: pointer; transition: transform 0.3s ease;">🏴‍☠️</div>
-                    <p style="color: #2F4F4F; font-size: 1.1rem; margin-top: 10px;">Click to open the treasure!</p>
-                </div>
-                
-                <div class="chest-opened" id="chestOpened" style="display: none;">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">💎✨🏆✨💎</div>
-                    <div style="font-size: 1.2rem; color: #2F4F4F; text-align: left; max-width: 600px; margin: 0 auto;">
-                        <h3 style="color: #20B2AA; text-align: center; margin-bottom: 15px;">🎁 Perfect Gifts for a 1-Year-Old Ocean Explorer! 🎁</h3>
-                        <p><strong>🧩 Shape Sorter:</strong> A wooden shape sorter to learn about shapes</p>
-                        <p><strong>🎵 Musical Instruments:</strong> Fun musical instruments to make some noise</p>
-                        <p><strong>🍌 Food and Kitchen:</strong> Wooden food toys and kitchen toys </p>
-                        <p><strong>🎨 Blocks:</strong> Building blocks, differet shapes, patterns and colors</p>
-                        <p><strong>⛵ Locks and Latches:</strong> Activity boards with locks and latches</p>
-                    </div>
-                    <button onclick="closeTreasureChest()" style="margin-top: 20px; background: linear-gradient(45deg, #FF6347, #20B2AA); border: none; color: white; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-family: inherit;">
-                        Close Treasure Chest
-                    </button>
                 </div>
             </div>
         </div>
