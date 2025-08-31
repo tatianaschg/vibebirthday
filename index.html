@@ -453,7 +453,7 @@
         <div class="info-section">
             <h2 style="color: #FF6347; font-size: 2rem; margin-bottom: 20px;">🐚 Ocean Treasure Hunt! 💎</h2>
             <p style="color: #2F4F4F; font-size: 1.2rem; margin-bottom: 25px;">
-                Gifts are optional, but if you need ideas, click the treasure chest to reveal gift **suggestions** for our little captain! Nice to go for sustainable options, even second hand welcome.
+                Gifts are optional! If you would like to give something but need some ideas, click the ocean gift card below for suggestions! Nice to go for sustainable options, second hand and hand made welcome.
             </p>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
@@ -497,6 +497,7 @@
                     </div>
                 </div>
             </div>
+            <button class="interactive-button" onclick="feelingLuckyGift()">🎁  Feeling Lucky!</button>
         </div>
     </div>
 
@@ -597,6 +598,139 @@
             createBubbles();
         }
 
+        function feelingLuckyGift() {
+            const oceanSurprises = [
+              {
+                text: "Pull Along Shape Sorter",
+                link: "https://www.jaqueslondon.co.uk/products/lets-learn-pull-along-shape-sorter"
+              },
+              {
+                text: "Hand Shaker Frog",
+                link: "https://www.bigjigstoys.co.uk/products/hand-shaker-pk-2-frog"
+              },
+              {
+                text: "Handbells Pack of 2",
+                link: "https://www.bigjigstoys.co.uk/products/handbells-pack-of-2"
+              },
+              {
+                text: "Rhythm & Rhyme Set",
+                link: "https://www.jaqueslondon.co.uk/products/rhythm-rhyme-set"
+              },
+              {
+                text: "Xylophone Musical Toy",
+                link: "https://www.jaqueslondon.co.uk/products/xylophone-musical-toy"
+              },
+              {
+                text: "Djeco Animambo Set of 3 Wooden Instruments",
+                link: "https://smallkins.com/products/djeco-animambo-set-of-3-wooden-instruments-dj06016"
+              },
+              {
+                text: "Classic World Iris Music Set",
+                link: "https://smallkins.com/products/classic-world-iris-music-set-cw40559"
+              },
+              {
+                text: "Classic World Music Table",
+                link: "https://smallkins.com/products/classic-world-music-table-cw40529"
+              },
+              {
+                text: "Drum Set",
+                link: "https://www.jaqueslondon.co.uk/products/drum-set"
+              },
+              {
+                text: "Djeco Animambo Hand Drum",
+                link: "https://smallkins.com/products/djeco-animambo-hand-drum-dj06004"
+              },
+              {
+                text: "Djeco Animambo Wooden Drum",
+                link: "https://smallkins.com/products/djeco-animambo-wooden-drum-dj06028"
+              },
+              {
+                text: "FSC Drum of 50 Bricks",
+                link: "https://www.bigjigstoys.co.uk/products/fsc-drum-of-50-bricks"
+              },
+              {
+                text: "Sound Blocks",
+                link: "https://www.jaqueslondon.co.uk/products/sound-blocks"
+              },
+              {
+                text: "Classic World Cutting Vegetables Puzzle",
+                link: "https://smallkins.com/products/classic-world-cutting-vegetables-puzzle-cw5011"
+              },
+              {
+                text: "Le Toy Van Apples and Pears Crate",
+                link: "https://smallkins.com/products/le-toy-van-apples-and-pears-crate"
+              },
+              {
+                text: "FSC Activity Work Bench",
+                link: "https://www.bigjigstoys.co.uk/products/fsc-activity-work-bench"
+              },
+              {
+                text: "Activity Pull Along Train",
+                link: "https://www.bigjigstoys.co.uk/products/activity-pull-along-train"
+              },
+              {
+                text: "Cradle Swing",
+                link: "https://www.bigjigstoys.co.uk/products/cradle-swing"
+              },
+              {
+                text: "Monkey Madness Stacking",
+                link: "https://www.jaqueslondon.co.uk/products/monkey-madness-stacking"
+              },
+              {
+                text: "Lets Play Crazy Cats Stacking Toy",
+                link: "https://www.jaqueslondon.co.uk/products/lets-play-crazy-cats-stacking-toy"
+              },
+              {
+                text: "Early Years Stacker",
+                link: "https://www.jaqueslondon.co.uk/products/early-years-stacker"
+              },
+              {
+                text: "Tool Box",
+                link: "https://smallkins.com/products/tool-box-tv476"
+              },
+              {
+                text: "Djeco Wooden Mini Tool Box Set",
+                link: "https://smallkins.com/products/djeco-wooden-mini-tool-box-set-dj06649"
+              },
+              {
+                text: "Latches and Catches",
+                link: "https://www.bigjigstoys.co.uk/products/latches-and-catches"
+              }
+            ];
+            
+            const randomSurprise = oceanSurprises[Math.floor(Math.random() * oceanSurprises.length)];
+            const surpriseElement = document.createElement('div');
+            surpriseElement.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                background: linear-gradient(45deg, #20B2AA, #FF6347);
+                color: white;
+                padding: 30px;
+                border-radius: 20px;
+                font-size: 2rem;
+                font-weight: bold;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                z-index: 1001;
+                animation: treasure-reveal 2s ease-out forwards;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+                border: 3px solid rgba(255,255,255,0.5);
+            `;
+            const link = document.createElement('a');
+            link.textContent = randomSurprise.text
+		    link.href = randomSurprise.link
+            surpriseElement.appendChild(link)
+            
+            document.body.appendChild(surpriseElement);
+            
+            setTimeout(() => {
+                surpriseElement.remove();
+            }, 8000);
+            
+            createBubbles();
+        }
+        
         function openTreasureChest() {
             const chestClosed = document.getElementById('chestClosed');
             const chestOpened = document.getElementById('chestOpened');
